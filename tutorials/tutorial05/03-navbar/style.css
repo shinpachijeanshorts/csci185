@@ -5,7 +5,8 @@ html {
 
 body * {
     box-sizing: border-box;
-    border-width:2px;
+    border-width:1px;
+    border-style:solid;
 }
 
 body {
@@ -19,10 +20,10 @@ nav, ul {
 }
 
 ul {
-    justify-content:flex-end;
     list-style-type:none;
 }
 
-h1 {
-    justify-content:flex-start;
+nav {
+    justify-content: space-between;
+    position:fixed
 }
