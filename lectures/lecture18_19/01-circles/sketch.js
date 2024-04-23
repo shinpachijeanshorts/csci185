@@ -11,8 +11,8 @@ function setup() {
     let width = 0;
     while (counter < 200) {
         circle(800, y, width);
-        circle(400, y, width);
-        circle(1200, y, width);
+        // circle(400, y, width);
+        // circle(1200, y, width);
         y += 5;
         width += 2;
 
