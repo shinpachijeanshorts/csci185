@@ -12,18 +12,73 @@ function search(ev) {
     }
 }
 
+function playTrack(trackId) {
+    const template = `
+    <iframe style="border-radius:12px" 
+        src="https://open.spotify.com/embed/track/${trackId}?utm_source=generator" 
+        width="100%" 
+        height="352" 
+        frameBorder="0" 
+        allowfullscreen="" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+        loading="lazy"></iframe>`;
+    document.querySelector('#artist-section').innerHTML = `<h1>Now Playing</h1>` + template;
+    
+
+}
+
 async function getTracks(term) {
-    console.log(`
-        get tracks from spotify based on the search term
-        "${term}" and load them into the #tracks section 
-        of the DOM...`);
+    const url = `${baseURL}?q=${term}&type=track&limit=5`;
+    console.log(url);
+    const request = await fetch(url);
+    const trackInfo = await request.json();
+
+    document.querySelector("#tracks").innerHTML = "";
+
+    for (let i = 0; i < 5; i++) {
+        const track = trackInfo[i];
+        console.log(trackInfo);
+        const snippet =
+            `
+        <section class="track-item preview" onclick="playTrack('${track.id}')">
+            <img src="${track.album.image_url}">
+            <i class="fas play-track fa-plasy" aria-hidden="true"></i>
+            <div class="label">
+                <h2>${track.name}</h2>
+                <p>
+                ${track.artist.name}
+                </p>
+            </div>
+        </section>`;
+        const container = document.querySelector(`#tracks`);
+        container.innerHTML += snippet;
+    }
 }
 
 async function getAlbums(term) {
-    console.log(`
-        get albums from spotify based on the search term
-        "${term}" and load them into the #albums section 
-        of the DOM...`);
+    const url = `${baseURL}?q=${term}&type=album`;
+    console.log(url);
+    const request = await fetch(url);
+    const albumInfo = await request.json();
+    for (let i = 0; i < albumInfo.length; i++) {
+        const album = albumInfo[i];
+        console.log(albumInfo);
+        const snippet =
+            `
+            <section class="album-card" id="2lATw9ZAVp7ILQcOKPCPqp">
+            <div>
+                <img src="${album.image_url}">
+                <h2>${album.name}</h2>
+                <div class="footer">
+                    <a href="${album.spotify_url}" target="_blank">
+                        view on spotify
+                    </a>
+                </div>
+            </div>
+        </section>`;
+        const container = document.querySelector(`#albums`);
+        container.innerHTML += snippet;
+    }
 }
 
 async function getArtist(term) {

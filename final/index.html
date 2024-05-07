@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cals Music Player</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="player">
+    <!-- Details -->
+    <audio class="audio">
+      <source= src="" type="audio/mpeg">
+    </audio>
+    <section class="track-section">
+      <div class="imgcontainer">
+      <img src="">
+      </div>
+      <span class="track-data">
+        <h1><strong class="track-name"></strong></h1>
+        <h1 class="artist-name"></h1>
+      </span>
+    </section>
+    <!--   Buttons    -->
+    <section class="controls-section">
+      <div class="controls">
+        <button class="play" onclick="playSong()">
+          <img src="https://files.catbox.moe/amhibd.png">
+        </button>
+        <button class="pause" onclick="pauseSong()">
+          <img src="https://files.catbox.moe/d9c31i.png">
+        </button>
+        <button class="back" onclick="back()">
+          <img src="https://files.catbox.moe/rsplpj.png">
+        </button>
+        <button class="forward" onclick="forward()">
+          <img src="https://files.catbox.moe/vagh6l.png">
+        </button>
+        <!-- Sliders  -->
+        <!-- NOTE: VOLUME SLIDER DOES NOT WORK! -->
+        <div class="volume">
+          <img src="https://files.catbox.moe/dbnqmc.png">
+          <input type="range" class="volume-control" min="0" max="1" step="0.1" value="1" style="width:90%;" onchange="setVolume()">
+        </div>
+      </div>
+      <div class="progress">
+        <img src="https://files.catbox.moe/tgz1jq.png">
+        <input type="range" min="1" max="100" value="" class="seek-slider" style="width:100%;" onchange="seekTo()">
+        <img src="https://files.catbox.moe/x2ntub.png">
+      </div>
+    </section>
+  </div>
+  <script src="main.js"></script>
+  <p>NOTES:
+    Volume control does not work, value will always stay at one despite moving the slider. <br>Hit the play button for music to start after the page loads, Private Life is silent for a few seconds - not broken!<br>The seek slider DOES work, but will sometimes lag on going to the correct value visually.
+  </p>
+</body>
+
+</html>

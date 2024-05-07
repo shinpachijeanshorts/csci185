@@ -1,0 +1,128 @@
+
+div.player {
+    width:400px;
+    height:490px;
+    padding:7px;
+    background: linear-gradient(0deg, rgba(78,100,171,1) 0%, rgba(52,186,255,1) 71%);
+    border-style:solid;
+    border-color:blue;
+    border-width:6px;
+}
+
+section.track-section {
+    width:95%;
+    height:55%;
+    margin:10px auto auto;
+}
+
+.imgcontainer img {
+    width:100%;
+    filter: drop-shadow(0 0 0.75rem black);
+}
+
+span.track-data {
+    margin:0;
+    padding-inline: 5px;
+    background-color: rgba(255, 255, 255, 0.422);
+    display:flex; 
+    justify-content:space-between; 
+    align-content:flex-start;
+    width:370px; 
+    height:60px;
+    position:absolute; 
+    z-index:1; 
+    top:31px;
+}
+span.track-data h1 {
+    font-size: 100%;
+}
+strong {
+    font-size:150%;
+    font-weight:800;
+}
+
+section.controls-section {
+    margin-top:20px;
+    height:120px;
+    width:100%;
+}
+
+button {
+    background: linear-gradient(0deg, rgba(163,178,226,1) 0%, rgba(255,255,255,1) 71%);
+    border-radius:50%;
+    filter: drop-shadow(5px 1px 0.25rem rgba(26, 25, 48, 0.224));
+}
+
+button:hover {
+    filter:brightness(60%);
+}
+
+div.progress {
+    width:60%;
+    display:flex;
+    position:relative;
+    top:-30px;
+    left:150px;
+}
+/* Individual Buttons Styling */
+
+button.play {
+    height:90px;
+    width:90px;
+    position:relative;
+    left:10px;
+    top:10px;
+}
+
+button.pause {
+    height:60px;
+    width:50px;
+    position:relative;
+    left:5px;
+    top:40px;
+    rotate:-20deg;
+}
+
+button.pause img {
+    rotate:20deg;
+}
+
+button.back, button.forward {
+    height:30px;
+    width:60px;
+    position:relative;
+    top:0;
+    left:30px;
+}
+button.forward {
+    left:80px;
+}
+
+button.back img, button.forward img{
+    width:60%;
+}
+
+div.volume {
+    width:250px;
+    position:relative;
+    left:110px;
+    bottom:80px;
+    display:flex;
+}
+
+div.volume img {
+    width:15%;
+}
+
+button img {
+    width:100%;
+    height:auto;
+}
+
+div.progress img {
+    width:25px;
+}
+
+
+
+
